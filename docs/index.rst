@@ -9,8 +9,9 @@ Welcome to Read the Docs Template's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 9
-   :glob:
+   :maxdepth: 2
+   :glob:doc/test.rst
+   doc/test.rst
 
    *
 
