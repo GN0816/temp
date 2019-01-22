@@ -11,10 +11,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :glob:
-   *
+
+
+
    doc/test.rst
 
-Welcome
+Welcome to
 ==================================================
 
 Contents:
