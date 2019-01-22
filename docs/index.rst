@@ -13,7 +13,8 @@ Contents:
    :glob:
    *
    doc/test.rst
-Welcome to Read the Docs Template's documentation!
+
+Welcome
 ==================================================
 
 Contents:
@@ -21,6 +22,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :glob:
+
+
+
    *
    
 
