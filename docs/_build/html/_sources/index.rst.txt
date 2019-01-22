@@ -23,3 +23,10 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+是你吗
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
