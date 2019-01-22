@@ -14,7 +14,7 @@ Contents:
 
 
 
-   test.rst
+   doc/test.rst
 
 Welcome to
 ==================================================
