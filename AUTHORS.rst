@@ -3,6 +3,6 @@ Authors
 
 * GaoNin
 
-* 人丑话多大傻帽欧阳梦娜
+* Human being ugly、More words、Silly hat--Ouyang Mengna
 
 
