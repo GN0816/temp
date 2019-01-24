@@ -2,35 +2,36 @@
 Runing
 ------
 1. 源码
-::
-    @settings:
-        language = Python;
-        autoimport = True;
-        compile_only = False;
-    @qcodes:
-    // The D_J Algorithm of 2 quantum bits
 
-    D_J(qvec q,cvec c){
-        RX(q[1],Pi);
-        H(q[0]);
-        H(q[1]);
-        CNOT(q[0],q[1]);
-        H(q[0]);
-        Measure(q[0],c[0]);
-    }
+    ::
+        @settings:
+            language = Python;
+            autoimport = True;
+            compile_only = False;
+        @qcodes:
+        // The D_J Algorithm of 2 quantum bits
 
-    @script:
-    init(QuantumMachine_type.CPU_SINGLE_THREAD)
-    q = qAlloc_many(2)
-    c = cAlloc_many(1)
-    qprog1 = D_J(q,c)
-    result = directly_run(qprog1)
-    print(result)
+        D_J(qvec q,cvec c){
+            RX(q[1],Pi);
+            H(q[0]);
+            H(q[1]);
+            CNOT(q[0],q[1]);
+            H(q[0]);
+            Measure(q[0],c[0]);
+        }
 
-    finalize()
+        @script:
+        init(QuantumMachine_type.CPU_SINGLE_THREAD)
+        q = qAlloc_many(2)
+        c = cAlloc_many(1)
+        qprog1 = D_J(q,c)
+        result = directly_run(qprog1)
+        print(result)
+
+        finalize()
 
 2. 根据标识切割源码
-    *Python源码处理
+    - Python源码处理
     ::
         def python_data(qrunes_file,sep_path,language_type):
         """generate python file
@@ -49,7 +50,7 @@ Runing
         with open(path, 'w', encoding = 'utf-8') as f:
             f.write(script_data)
         qcodeHandle.main(qrunes_file,file_generate_path,language_type)
-    *C++源码处理
+    - C++源码处理
     ::
         def cpp_data(qrunes_file,sep_path,language_type):
         """generate c++ file
@@ -77,7 +78,7 @@ Runing
 
 3. 解析qcodes代码
     
-    源码：
+    - 源码：
     ::
         D_J(qvec q,cvec c){
             RX(q[1],Pi);
@@ -87,7 +88,7 @@ Runing
             H(q[0]);
             Measure(q[0],c[0]);
         }
-    python代码：
+    - python代码：
     ::
         def D_J(q,c):
         _qprog = QProg()
@@ -100,7 +101,7 @@ Runing
         return _qprog
 
 4. running过程
-    使用nodejs运行python代码：
+    - 使用nodejs运行python代码：
     ::
         CommandExecutor.exec('python', [path.dirname(file_path)+generate_file_path+'\\script.py'])
             .then(stdout => {
