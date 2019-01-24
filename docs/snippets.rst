@@ -13,8 +13,8 @@ Snippets功能技术总结
 4. 详细设计过程
     在package.json中添加snipperts功能，配置language（后缀名）、path(提示模板的路径)；创建该路径，书写json格式的提示语。
 
+    如：
     ::
- 
     "sqs": {
         "prefix": "sqs",
         "body": [ 
@@ -26,4 +26,5 @@ Snippets功能技术总结
         ],
         "description": "Code snippet for the basic qcodes imports"
     }
+    ::
 
