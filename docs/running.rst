@@ -31,26 +31,26 @@ Runing
         finalize()
 
 2. 根据标识切割源码
-    - Python源码处理
-        ::
-            def python_data(qrunes_file,sep_path,language_type):
-            """generate python file
-            - qrunes_file -- The data address to load
-            - sep_path -- Built-in code path
-            - language_type -- language type
-            """
-            generate_import_py_file(qrunes_file,sep_path,language_type)
-            path=sep_path + "\\qcodes.q"
-            with open(path, 'w', encoding = 'utf-8') as f:
-                f.write(utils.get_qcodes(qrunes_file))
-            generate_package_name = utils.get_filename(qrunes_file)+'_python'
-            file_generate_path = utils.makedirs(os.path.dirname(qrunes_file)+"\\"+generate_package_name)
-            script_data = utils.get_script(qrunes_file)
-            path =  file_generate_path + '\\script.py'
-            with open(path, 'w', encoding = 'utf-8') as f:
-                f.write(script_data)
-            qcodeHandle.main(qrunes_file,file_generate_path,language_type)
-    - C++源码处理
+    Python源码处理
+    ::
+        def python_data(qrunes_file,sep_path,language_type):
+        """generate python file
+        - qrunes_file -- The data address to load
+        - sep_path -- Built-in code path
+        - language_type -- language type
+        """
+        generate_import_py_file(qrunes_file,sep_path,language_type)
+        path=sep_path + "\\qcodes.q"
+        with open(path, 'w', encoding = 'utf-8') as f:
+            f.write(utils.get_qcodes(qrunes_file))
+        generate_package_name = utils.get_filename(qrunes_file)+'_python'
+        file_generate_path = utils.makedirs(os.path.dirname(qrunes_file)+"\\"+generate_package_name)
+        script_data = utils.get_script(qrunes_file)
+        path =  file_generate_path + '\\script.py'
+        with open(path, 'w', encoding = 'utf-8') as f:
+            f.write(script_data)
+        qcodeHandle.main(qrunes_file,file_generate_path,language_type)
+    C++源码处理
     ::
         def cpp_data(qrunes_file,sep_path,language_type):
         """generate c++ file
@@ -78,7 +78,7 @@ Runing
 
 3. 解析qcodes代码
     
-    - 源码：
+    源码：
     ::
         D_J(qvec q,cvec c){
             RX(q[1],Pi);
@@ -88,7 +88,7 @@ Runing
             H(q[0]);
             Measure(q[0],c[0]);
         }
-    - python代码：
+    python代码：
     ::
         def D_J(q,c):
         _qprog = QProg()
@@ -101,7 +101,7 @@ Runing
         return _qprog
 
 4. running过程
-    - 使用nodejs运行python代码：
+    使用nodejs运行python代码：
     ::
         CommandExecutor.exec('python', [path.dirname(file_path)+generate_file_path+'\\script.py'])
             .then(stdout => {
