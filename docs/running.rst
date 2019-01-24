@@ -2,7 +2,7 @@
 Runing
 ------
 1. 源码
-    ::
+::
         @settings:
             language = Python;
             autoimport = True;
