@@ -2,33 +2,32 @@
 Runing
 ------
 1. 源码
-    如：
-    ::
-        @settings:
-            language = Python;
-            autoimport = True;
-            compile_only = False;
-        @qcodes:
-        // The D_J Algorithm of 2 quantum bits
+::
+    @settings:
+        language = Python;
+        autoimport = True;
+        compile_only = False;
+    @qcodes:
+    // The D_J Algorithm of 2 quantum bits
 
-        D_J(qvec q,cvec c){
-            RX(q[1],Pi);
-            H(q[0]);
-            H(q[1]);
-            CNOT(q[0],q[1]);
-            H(q[0]);
-            Measure(q[0],c[0]);
-        }
+    D_J(qvec q,cvec c){
+        RX(q[1],Pi);
+        H(q[0]);
+        H(q[1]);
+        CNOT(q[0],q[1]);
+        H(q[0]);
+        Measure(q[0],c[0]);
+    }
 
-        @script:
-        init(QuantumMachine_type.CPU_SINGLE_THREAD)
-        q = qAlloc_many(2)
-        c = cAlloc_many(1)
-        qprog1 = D_J(q,c)
-        result = directly_run(qprog1)
-        print(result)
+    @script:
+    init(QuantumMachine_type.CPU_SINGLE_THREAD)
+    q = qAlloc_many(2)
+    c = cAlloc_many(1)
+    qprog1 = D_J(q,c)
+    result = directly_run(qprog1)
+    print(result)
 
-        finalize()
+    finalize()
 
 2. 根据标识切割源码
     - Python源码处理
