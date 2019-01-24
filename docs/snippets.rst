@@ -15,16 +15,16 @@ Snippets功能技术总结
 
     如：
     ::
-    "sqs": {
-        "prefix": "sqs",
-        "body": [ 
-            "@settings:",
-            "\t",
-            "@qcodes:",
-            "\t",
-            "@script:"
-        ],
-        "description": "Code snippet for the basic qcodes imports"
-    }
-    ::
+
+        "sqs": {
+            "prefix": "sqs",
+            "body": [ 
+                "@settings:",
+                "\t",
+                "@qcodes:",
+                "\t",
+                "@script:"
+            ],
+            "description": "Code snippet for the basic qcodes imports"
+        }
 
