@@ -46,6 +46,6 @@ qurator-vscode 插件提供图形化的结果展示，程序运行后会展示 j
    source/prerequisites
    source/quickStart
    source/functionDetail
-
+   source/changeLog
 
 
